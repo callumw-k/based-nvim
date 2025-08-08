@@ -14,4 +14,4 @@ vim.lsp.enable("lua_ls")
 
 -- Keybinds --
 
-keymaps.set_keymap("<leader>lf", vim.lsp.buf.format)
+keymaps.set_k("<leader>lf", vim.lsp.buf.format)

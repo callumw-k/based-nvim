@@ -39,4 +39,4 @@ require('oil').setup({
 })
 
 
-require('keymaps').set_keymap('<leader>pv', ':Oil<cr>')
+require('keymaps').set_k('<leader>pv', ':Oil<cr>')

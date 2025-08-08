@@ -4,7 +4,7 @@ vim.pack.add({
 	'https://github.com/ibhagwan/fzf-lua'
 })
 
-local opts = require('keymaps').set_keymap
+local opts = require('keymaps').set_k
 
 opts("<leader>fp", ":FzfLua files<cr>")
 opts("<leader>fg", ":FzfLua grep_visual<cr>")
