@@ -1,6 +1,7 @@
 local o = vim.opt
 
 o.fileencoding = "uft-8"
+o.cmdheight = 1
 
 o.undofile = true
 o.undolevels = 1000
@@ -22,5 +23,8 @@ o.splitbelow = true
 o.splitright = true
 o.termguicolors = true
 o.hlsearch = false
+o.hidden = true
 o.scrolloff = 8
+o.expandtab = true
+vim.opt.incsearch = true
 o.winborder = "rounded"

@@ -1,11 +1,15 @@
 local m = {}
 opts = { noremap = true, silent = true }
 
+m.set = function(var1, var2, var3)
+	vim.keymap.set(var1, var2, var3, opts)
+end
+
 m.set_k = function(var1, var2)
 	vim.keymap.set("n", var1, var2, opts)
 end
 
-m.set_i = function(var1,  var2)
+m.set_i = function(var1, var2)
 	vim.keymap.set("i", var1, var2, opts)
 end
 
@@ -23,8 +27,9 @@ m.set_k("<S-h>", ":bprevious<cr>")
 
 m.set_k("<leader>o", ":so<cr>")
 m.set_k("<leader>w", ":silent update!<cr>")
-m.set_k( "<leader>q", ":q!<cr>")
-m.set_k("<leader>e", vim.diagnostic.open_float)
-
+m.set_k("<leader>q", ":q!<cr>")
+m.set_k("<leader>d", ":bd!<cr>")
+m.set_k("<leader>D", ":%bd<cr>")
+m.set({'n', 'v','x'}, "<leader>y", '"+y<cr"')
 
 return m
