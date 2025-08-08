@@ -1,6 +1,6 @@
 local keymaps = require('keymaps')
 
-vim.cmd("set completeopt+=noselect")
+vim.cmd[[set completeopt+=menuone,noselect,popup]]
 
 vim.pack.add({
 	'https://github.com/neovim/nvim-lspconfig',

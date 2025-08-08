@@ -5,7 +5,7 @@ m.set_keymap = function(var1, var2)
 	vim.keymap.set("n", var1, var2, opts)
 end
 
-m.set_insert_keymap = function(var1,  var2)
+m.set_i = function(var1,  var2)
 	vim.keymap.set("i", var1, var2, opts)
 end
 
