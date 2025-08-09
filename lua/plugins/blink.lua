@@ -14,8 +14,8 @@ require("blink.cmp").setup({
 			menu = {
 				auto_show = function(ctx)
 					return vim.fn.getcmdtype() == ":"
-					-- enable for inputs as well, with:
-					-- or vim.fn.getcmdtype() == '@'
+						-- enable for inputs as well, with:
+						or vim.fn.getcmdtype() == "@"
 				end,
 			},
 		},

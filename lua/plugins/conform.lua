@@ -4,7 +4,9 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		rust = { "rustfmt", lsp_format = "fallback" },
-		javascript = { "prettierd", "prettier", stop_after_first = true },
+		javascript = { "prettierd", stop_after_first = true },
+		typescript = { "prettierd", stop_after_first = true },
+		svelte = { "prettierd", stop_after_first = true },
 		dart = { lsp_format = "fallback" },
 	},
 })

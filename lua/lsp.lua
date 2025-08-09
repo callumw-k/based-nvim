@@ -8,6 +8,7 @@ vim.pack.add({
 require("mason").setup()
 
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("svelte")
 
 -- Keybinds --
 
@@ -15,7 +16,6 @@ keymaps.set_k("<leader>lf", vim.lsp.buf.format)
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
-		local opts = { buffer = ev.buf, silent = true }
 		require("keymaps").set_k("<leader>ca", vim.lsp.buf.code_action)
 		require("keymaps").set_k("<leader>rn", vim.lsp.buf.rename)
 		require("keymaps").set_k("<leader>e", vim.diagnostic.open_float)

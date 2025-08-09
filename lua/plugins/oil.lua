@@ -1,7 +1,9 @@
-vim.pack.add({'https://github.com/stevearc/oil.nvim'})
+vim.pack.add({
+	"https://github.com/stevearc/oil.nvim",
+	{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim", version = "v3.x" },
+})
 
-
-require('oil').setup({
+require("oil").setup({
 	default_file_explorer = true,
 	use_default_keymaps = false,
 	keymaps = {
@@ -35,8 +37,21 @@ require('oil').setup({
 		["gx"] = "actions.open_external",
 		["g."] = "actions.toggle_hidden",
 		["g\\"] = "actions.toggle_trash",
-	}
+	},
 })
 
+require("neo-tree").setup({
+	event_handlers = {
+		{
+			event = "file_open_requested",
+			handler = function(arg)
+				print("file opened!")
+				require("neo-tree.command").execute({ action = "close" })
+			end,
+		},
+	},
+})
 
-require('keymaps').set_k('<leader>pv', ':Oil<cr>')
+require("keymaps").set_k("<leader>pv", ":Neotree toggle<cr>")
+
+-- require("keymaps").set_k("<leader>pv", ":Oil<cr>")
