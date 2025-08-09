@@ -1,7 +1,10 @@
 vim.pack.add({
+	"https://github.com/pmizio/typescript-tools.nvim",
 	"https://github.com/nvim-flutter/flutter-tools.nvim",
 	"https://github.com/nvim-telescope/telescope.nvim",
 })
+
+require("typescript-tools").setup({})
 
 require("flutter-tools").setup({
 	dev_log = {

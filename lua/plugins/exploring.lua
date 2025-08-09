@@ -1,5 +1,8 @@
+local set_k = require("keymaps").set_k
+
 vim.pack.add({
 	"https://github.com/stevearc/oil.nvim",
+	"https://github.com/ibhagwan/fzf-lua",
 	{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim", version = "v3.x" },
 })
 
@@ -13,12 +16,6 @@ require("oil").setup({
 			opts = { vertical = true, close = true },
 			desc = "Open the entry in a vertical split",
 		},
-		-- ["<C-h>"] = {
-		-- 	"actions.select",
-		-- 	opts = { horizontal = true, close = true },
-		-- 	desc = "Open the entry in a horizontal split",
-		-- },
-
 		["<cr>"] = "actions.select",
 		["-"] = "actions.parent",
 		["<leader>p"] = {
@@ -43,15 +40,21 @@ require("oil").setup({
 require("neo-tree").setup({
 	event_handlers = {
 		{
-			event = "file_open_requested",
-			handler = function(arg)
-				print("file opened!")
+			event = "file_opened",
+			handler = function()
 				require("neo-tree.command").execute({ action = "close" })
 			end,
 		},
 	},
 })
 
-require("keymaps").set_k("<leader>pv", ":Neotree toggle<cr>")
+set_k("<leader>pv", ":Oil<cr>")
 
--- require("keymaps").set_k("<leader>pv", ":Oil<cr>")
+-- FZF Keymaps --
+--
+set_k("<leader>fp", ":FzfLua files<cr>")
+set_k("<leader>fg", ":FzfLua grep_visual<cr>")
+set_k("<leader>fh", ":FzfLua help_tags<cr>")
+set_k("<leader>fm", ":FzfLua marks<cr>")
+set_k("<leader>h", ":FzfLua buffers<cr>")
+set_k("<leader>fs", ":FzfLua grep_curbuf<cr>")
