@@ -1,3 +1,3 @@
-require("lua.plugins.lsp.nvim-lsp")
-require("lua.plugins.lsp.lsp-plugins")
-require("lua.plugins.lsp.lsp-helpers")
+require("plugins.lsp.nvim-lsp")
+require("plugins.lsp.lsp-plugins")
+require("plugins.lsp.lsp-helpers")
