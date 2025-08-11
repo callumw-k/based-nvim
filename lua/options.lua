@@ -26,5 +26,6 @@ o.hlsearch = false
 o.hidden = true
 o.scrolloff = 8
 o.expandtab = true
-vim.opt.incsearch = true
+o.incsearch = true
 o.winborder = "rounded"
+o.exrc = true
