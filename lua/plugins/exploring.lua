@@ -6,6 +6,10 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim", version = "v3.x" },
 })
 
+require("fzf-lua").setup({
+	winopts = { preview = { hidden = true } },
+})
+
 require("oil").setup({
 	default_file_explorer = true,
 	use_default_keymaps = false,

@@ -21,7 +21,7 @@ require("alpha").setup(require("alpha.themes.dashboard").config)
 
 -- Colorscheme --
 
-vim.cmd("colorscheme catppuccin-mocha")
+vim.cmd("colorscheme catppuccin-macchiato")
 
 -- Windows --
 

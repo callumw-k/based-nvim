@@ -1,7 +1,16 @@
 vim.pack.add({
 	"https://github.com/pmizio/typescript-tools.nvim",
 	"https://github.com/nvim-flutter/flutter-tools.nvim",
+	"https://github.com/folke/lazydev.nvim",
 	"https://github.com/nvim-telescope/telescope.nvim",
+})
+
+require("lazydev").setup({
+	opts = {
+		library = {
+			{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+		},
+	},
 })
 
 require("typescript-tools").setup({})

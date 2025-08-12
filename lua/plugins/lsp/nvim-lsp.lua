@@ -12,6 +12,11 @@ vim.lsp.enable("svelte")
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
+		-- require("keymaps").set_k("gdd", ":FzfLua lsp_declartions<cr>")
+		require("keymaps").set_k("gd", ":FzfLua lsp_definitions<cr>")
+		require("keymaps").set_k("gt", ":FzfLua lsp_typedefs<cr>")
+		require("keymaps").set_k("gi", ":FzfLua lsp_implementations<cr>")
+		require("keymaps").set_k("grr", ":FzfLua lsp_references<cr>")
 		require("keymaps").set_k("<leader>ca", vim.lsp.buf.code_action)
 		require("keymaps").set_k("<leader>rn", vim.lsp.buf.rename)
 		require("keymaps").set_k("<leader>e", vim.diagnostic.open_float)
