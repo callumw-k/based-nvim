@@ -3,6 +3,7 @@ vim.pack.add({
 	"https://github.com/nvim-flutter/flutter-tools.nvim",
 	"https://github.com/folke/lazydev.nvim",
 	"https://github.com/nvim-telescope/telescope.nvim",
+	"https://github.com/seblyng/roslyn.nvim",
 })
 
 require("lazydev").setup({
@@ -30,6 +31,8 @@ require("flutter-tools").setup({
 	},
 	lsp = { settings = { lineLength = 120 } },
 })
+
+require("roslyn").setup({})
 
 require("telescope").load_extension("flutter")
 local builtin = require("telescope").extensions

@@ -57,7 +57,7 @@ set_k("<leader>pv", ":Oil<cr>")
 -- FZF Keymaps --
 --
 set_k("<leader>fp", ":FzfLua files<cr>")
-set_k("<leader>fg", ":FzfLua grep_visual<cr>")
+set_k("<leader>fg", ":FzfLua grep_project<cr>")
 set_k("<leader>fh", ":FzfLua help_tags<cr>")
 set_k("<leader>fm", ":FzfLua marks<cr>")
 set_k("<leader>h", ":FzfLua buffers<cr>")

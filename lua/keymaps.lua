@@ -13,8 +13,6 @@ m.set_i = function(var1, var2)
 	vim.keymap.set("i", var1, var2, opts)
 end
 
-
-
 vim.g.mapleader = " "
 
 m.set_k("<C-h>", "<C-w>h")
@@ -29,7 +27,8 @@ m.set_k("<leader>o", ":so<cr>")
 m.set_k("<leader>w", ":silent update!<cr>")
 m.set_k("<leader>q", ":q!<cr>")
 m.set_k("<leader>d", ":bd!<cr>")
+m.set_k("<leader>bo", ":Bufonly<cr>")
 m.set_k("<leader>D", ":%bd<cr>")
-m.set({'n', 'v','x'}, "<leader>y", '"+y<cr"')
+m.set({ "n", "v", "x" }, "<leader>y", '"+y<cr"')
 
 return m

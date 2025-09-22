@@ -1,5 +1,6 @@
 vim.pack.add({
 	"https://github.com/stevearc/conform.nvim",
+	{ src = "https://github.com/L3MON4D3/LuaSnip", version = "v2.4.0" },
 	{ src = "https://github.com/Saghen/blink.cmp", version = "v1.6.0" },
 })
 
@@ -11,6 +12,8 @@ require("conform").setup({
 		typescript = { "prettierd", stop_after_first = true },
 		svelte = { "prettierd", stop_after_first = true },
 		dart = { lsp_format = "fallback" },
+		cs = { lsp_format = "fallback" },
+		astro = { "prettierd", stop_after_first = true },
 	},
 })
 
@@ -18,8 +21,11 @@ require("blink.cmp").setup({
 	keymap = {
 		["<CR>"] = { "accept", "fallback" },
 	},
+	snippets = { preset = "luasnip" },
 	sources = {
-		default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+		per_filetype = {
+			lua = { "lazydev", inherit_defaults = true },
+		},
 		providers = {
 			lazydev = {
 				name = "LazyDev",

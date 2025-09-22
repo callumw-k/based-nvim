@@ -1,7 +1,7 @@
 vim.pack.add({
 	"https://github.com/nvim-lualine/lualine.nvim",
 	"https://github.com/goolord/alpha-nvim",
-	"https://github.com/romgrk/barbar.nvim",
+	"https://github.com/akinsho/bufferline.nvim",
 	"https://github.com/EdenEast/nightfox.nvim",
 	"https://github.com/catppuccin/nvim",
 	"https://github.com/anuvyklack/windows.nvim",
@@ -12,12 +12,9 @@ vim.g.barbar_auto_setup = false
 
 require("lualine").setup()
 
-require("barbar").setup({
-	insert_at_end = true,
-	animation = false,
-})
+require("bufferline").setup({})
 
-require("alpha").setup(require("alpha.themes.dashboard").config)
+-- require("alpha").setup(require("alpha.themes.dashboard").config)
 
 -- Colorscheme --
 
