@@ -1,18 +1,18 @@
 vim.pack.add({
 	"https://github.com/nvim-lualine/lualine.nvim",
 	"https://github.com/goolord/alpha-nvim",
-	"https://github.com/akinsho/bufferline.nvim",
+	-- "https://github.com/akinsho/bufferline.nvim",
 	"https://github.com/EdenEast/nightfox.nvim",
 	"https://github.com/catppuccin/nvim",
 	"https://github.com/anuvyklack/windows.nvim",
 	"https://github.com/anuvyklack/middleclass",
 })
 
-vim.g.barbar_auto_setup = false
+-- vim.g.barbar_auto_setup = false
 
 require("lualine").setup()
 
-require("bufferline").setup({})
+-- require("bufferline").setup({})
 
 -- require("alpha").setup(require("alpha.themes.dashboard").config)
 

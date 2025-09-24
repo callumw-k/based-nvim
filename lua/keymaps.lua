@@ -22,6 +22,7 @@ m.set_k("<C-l>", "<C-w>l")
 
 m.set_k("<S-l>", ":bnext<cr>")
 m.set_k("<S-h>", ":bprevious<cr>")
+m.set_k("<leader>b", "<C-^>")
 
 m.set_k("<leader>o", ":so<cr>")
 m.set_k("<leader>w", ":silent update!<cr>")
