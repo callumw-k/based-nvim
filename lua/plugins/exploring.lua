@@ -7,7 +7,7 @@ vim.pack.add({
 })
 
 require("fzf-lua").setup({
-	winopts = { preview = { hidden = true } },
+	winopts = { preview = { layout = "vertical", vertical = "down:80%" } },
 })
 
 require("oil").setup({

@@ -27,6 +27,7 @@ vim.lsp.enable("svelte")
 vim.lsp.enable("html")
 vim.lsp.enable("astro")
 vim.lsp.enable("tailwindcss")
+vim.lsp.enable("cssls")
 
 -- Keybinds --
 vim.api.nvim_create_autocmd("LspAttach", {
