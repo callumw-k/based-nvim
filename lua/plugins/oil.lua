@@ -1,14 +1,6 @@
 local set_k = require("keymaps").set_k
 
-vim.pack.add({
-	"https://github.com/stevearc/oil.nvim",
-	"https://github.com/ibhagwan/fzf-lua",
-	{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim", version = "v3.x" },
-})
-
-require("fzf-lua").setup({
-	winopts = { preview = { layout = "vertical", vertical = "down:80%" } },
-})
+vim.pack.add({ "https://github.com/stevearc/oil.nvim" })
 
 require("oil").setup({
 	default_file_explorer = true,
@@ -41,24 +33,4 @@ require("oil").setup({
 	},
 })
 
-require("neo-tree").setup({
-	event_handlers = {
-		{
-			event = "file_opened",
-			handler = function()
-				require("neo-tree.command").execute({ action = "close" })
-			end,
-		},
-	},
-})
-
 set_k("<leader>pv", ":Oil<cr>")
-
--- FZF Keymaps --
---
-set_k("<leader>fp", ":FzfLua files<cr>")
-set_k("<leader>fg", ":FzfLua grep_project<cr>")
-set_k("<leader>fh", ":FzfLua help_tags<cr>")
-set_k("<leader>fm", ":FzfLua marks<cr>")
-set_k("<leader>h", ":FzfLua buffers<cr>")
-set_k("<leader>fs", ":FzfLua grep_curbuf<cr>")
