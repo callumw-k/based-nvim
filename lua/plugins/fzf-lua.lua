@@ -7,7 +7,7 @@ require("fzf-lua").setup({
 })
 
 set_k("<leader>fp", ":FzfLua files<cr>")
-set_k("<leader>fg", ":FzfLua grep_project<cr>")
+set_k("<leader>fg", ":FzfLua live_grep_native<cr>")
 set_k("<leader>fh", ":FzfLua help_tags<cr>")
 set_k("<leader>fm", ":FzfLua marks<cr>")
 set_k("<leader>h", ":FzfLua buffers<cr>")
