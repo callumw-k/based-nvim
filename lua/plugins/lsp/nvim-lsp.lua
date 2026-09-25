@@ -1,6 +1,7 @@
 vim.pack.add({
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/mason-org/mason.nvim",
+	"https://github.com/mason-org/mason-lspconfig.nvim",
 })
 
 require("mason").setup({
@@ -10,12 +11,21 @@ require("mason").setup({
 	},
 })
 
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("svelte")
-vim.lsp.enable("html")
-vim.lsp.enable("astro")
-vim.lsp.enable("tailwindcss")
-vim.lsp.enable("cssls")
+require("mason-lspconfig").setup()
+
+vim.lsp.config("ts_ls", {
+	settings = {
+		completions = { completeFunctionCalls = true },
+	},
+})
+
+-- vim.lsp.enable("lua_ls")
+-- vim.lsp.enable("svelte")
+-- vim.lsp.enable("html")
+-- vim.lsp.enable("astro")
+-- vim.lsp.enable("tailwindcss")
+-- vim.lsp.enable("cssls")
+-- vim.lsp.enable("eslint")
 
 -- Keybinds --
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -29,12 +39,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		require("keymaps").set_k("<leader>rn", vim.lsp.buf.rename)
 		require("keymaps").set_k("<leader>e", vim.diagnostic.open_float)
 		require("keymaps").set_k("<leader>lf", vim.lsp.buf.format)
-	end,
-})
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
 	end,
 })

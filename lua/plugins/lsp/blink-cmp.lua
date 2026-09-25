@@ -18,6 +18,21 @@ require("blink.cmp").setup({
 		},
 	},
 	completion = {
+		menu = {
+			draw = {
+				components = {
+					label = {
+						text = function(ctx)
+							local text = ctx.label .. ctx.label_detail
+							if ctx.label_detail == "" and (ctx.kind == "Function" or ctx.kind == "Method") then
+								text = text .. "()"
+							end
+							return text
+						end,
+					},
+				},
+			},
+		},
 		documentation = {
 			auto_show = true,
 			auto_show_delay_ms = 250,

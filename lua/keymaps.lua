@@ -1,5 +1,5 @@
 local m = {}
-opts = { noremap = true, silent = true }
+local opts = { noremap = true, silent = true }
 
 m.set = function(var1, var2, var3)
 	vim.keymap.set(var1, var2, var3, opts)
@@ -28,8 +28,9 @@ m.set_k("<leader>o", ":so<cr>")
 m.set_k("<leader>w", ":silent update!<cr>")
 m.set_k("<leader>q", ":q!<cr>")
 m.set_k("<leader>d", ":bd!<cr>")
-m.set_k("<leader>bo", ":Bufonly<cr>")
+m.set_k("<leader>O", ":Bufonly<cr>")
 m.set_k("<leader>D", ":%bd<cr>")
-m.set({ "n", "v", "x" }, "<leader>y", '"+y<cr"')
+m.set({ "n", "v", "x" }, "<leader>y", '"+y')
+m.set("x", "p", "P")
 
 return m

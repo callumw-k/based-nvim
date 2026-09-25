@@ -1,6 +1,5 @@
 local o = vim.opt
 
-o.fileencoding = "uft-8"
 o.cmdheight = 1
 
 o.undofile = true
