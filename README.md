@@ -38,7 +38,7 @@ The lock file `nvim-pack-lock.json` pins every plugin to a specific git commit f
 ### Updating Plugins
 
 ```vim
-:packupdate       " update all plugins
+:lua vim.pack.update()   " update all plugins
 ```
 
 To pin a specific version, set the `version` key:
@@ -66,7 +66,6 @@ vim.pack.add({ { src = "https://github.com/author/plugin", version = "v1.0.0" } 
 | `nvim-autopairs` | Auto-close brackets/quotes |
 | `nvim-ts-autotag` | Auto-close HTML tags |
 | `marks.nvim` | Mark navigation with visual indicators |
-| `typescript-tools.nvim` | Enhanced TypeScript/JavaScript LSP |
 | `flutter-tools.nvim` | Flutter/Dart development |
 | `roslyn.nvim` | C# via Roslyn LSP |
 | `lazydev.nvim` | Lua type hints & completion |
@@ -78,17 +77,22 @@ vim.pack.add({ { src = "https://github.com/author/plugin", version = "v1.0.0" } 
 
 ## LSP Servers
 
-Servers enabled via `vim.lsp.enable()` — configure in `lua/plugins/lsp/nvim-lsp.lua`:
+`mason-lspconfig` enables every server installed through `:Mason`. Per-server settings go in `lua/plugins/lsp/nvim-lsp.lua` via `vim.lsp.config()`. Currently installed:
 
 | Server | Language |
 |--------|----------|
 | `lua_ls` | Lua |
-| `svelte` | Svelte |
-| `html` | HTML |
-| `astro` | Astro |
+| `ts_ls` | TypeScript / JavaScript |
+| `eslint` | JS / TS linting |
 | `tailwindcss` | Tailwind CSS |
 | `cssls` | CSS / SCSS |
-| `typescript-tools` | TypeScript / JavaScript |
+| `css_variables` | CSS custom properties |
+| `somesass_ls` | SCSS / Sass |
+
+Set up outside Mason:
+
+| Server | Language |
+|--------|----------|
 | `flutter-tools` (dartls) | Flutter / Dart |
 | `roslyn` | C# |
 
@@ -127,7 +131,7 @@ Configured in `lua/plugins/lsp/conform.lua`. Format runs automatically on save (
 | `<S-h>` | Previous buffer |
 | `<leader>b` | Toggle to previous buffer |
 | `<leader>d` | Close current buffer |
-| `<leader>bo` | Close all other buffers |
+| `<leader>O` | Close all other buffers |
 | `<leader>D` | Close all buffers |
 
 ### Windows
@@ -180,7 +184,7 @@ Configured in `lua/plugins/lsp/conform.lua`. Format runs automatically on save (
 | `<leader>ca` | Code actions |
 | `<leader>rn` | Rename symbol |
 | `<leader>e` | Show diagnostics (float) |
-| `<leader>lf` | Format buffer |
+| `<leader>lf` | Format buffer (conform) |
 
 ### Flutter
 

@@ -30,14 +30,20 @@ vim.lsp.config("ts_ls", {
 -- Keybinds --
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
+		local set_k = function(lhs, rhs)
+			vim.keymap.set("n", lhs, rhs, { noremap = true, silent = true, buffer = ev.buf })
+		end
+
 		-- require("keymaps").set_k("gdd", ":FzfLua lsp_declartions<cr>")
-		require("keymaps").set_k("gd", ":FzfLua lsp_definitions<cr>")
-		require("keymaps").set_k("gt", ":FzfLua lsp_typedefs<cr>")
-		require("keymaps").set_k("gi", ":FzfLua lsp_implementations<cr>")
-		require("keymaps").set_k("grr", ":FzfLua lsp_references<cr>")
-		require("keymaps").set_k("<leader>ca", vim.lsp.buf.code_action)
-		require("keymaps").set_k("<leader>rn", vim.lsp.buf.rename)
-		require("keymaps").set_k("<leader>e", vim.diagnostic.open_float)
-		require("keymaps").set_k("<leader>lf", vim.lsp.buf.format)
+		set_k("gd", ":FzfLua lsp_definitions<cr>")
+		set_k("gt", ":FzfLua lsp_typedefs<cr>")
+		set_k("gi", ":FzfLua lsp_implementations<cr>")
+		set_k("grr", ":FzfLua lsp_references<cr>")
+		set_k("<leader>ca", vim.lsp.buf.code_action)
+		set_k("<leader>rn", vim.lsp.buf.rename)
+		set_k("<leader>e", vim.diagnostic.open_float)
+		set_k("<leader>lf", function()
+			require("conform").format()
+		end)
 	end,
 })
