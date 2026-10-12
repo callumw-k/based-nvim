@@ -19,6 +19,14 @@ m.set_k("<C-h>", "<C-w>h")
 m.set_k("<C-j>", "<C-w>j")
 m.set_k("<C-k>", "<C-w>k")
 m.set_k("<C-l>", "<C-w>l")
+m.set_k("<leader>mp", function()
+	if vim.t.zoomed then
+		vim.cmd.tabclose()
+	else
+		vim.cmd("tab split")
+		vim.t.zoomed = true
+	end
+end)
 
 m.set_k("<S-l>", ":bnext<cr>")
 m.set_k("<S-h>", ":bprevious<cr>")

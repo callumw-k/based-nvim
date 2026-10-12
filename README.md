@@ -52,7 +52,7 @@ vim.pack.add({ { src = "https://github.com/author/plugin", version = "v1.0.0" } 
 | Plugin | Purpose |
 |--------|---------|
 | `nvim-lspconfig` + `mason.nvim` | Core LSP setup & server installer |
-| `blink.cmp` | Completion engine (v1.6.0) |
+| `blink.cmp` | Completion engine (v1.10.2) |
 | `LuaSnip` | Snippet engine |
 | `conform.nvim` | Code formatting |
 | `nvim-treesitter` | Syntax highlighting |
@@ -62,16 +62,16 @@ vim.pack.add({ { src = "https://github.com/author/plugin", version = "v1.0.0" } 
 | `flash.nvim` | Enhanced motion/jumping |
 | `catppuccin` | Color scheme (Macchiato) |
 | `lualine.nvim` | Status bar |
-| `windows.nvim` | Window management |
 | `nvim-autopairs` | Auto-close brackets/quotes |
 | `nvim-ts-autotag` | Auto-close HTML tags |
 | `marks.nvim` | Mark navigation with visual indicators |
+| `mini.surround` | Add / delete / replace surroundings |
+| `mini.ai` | Extended `a` / `i` text objects |
+| `gitsigns.nvim` | Git change signs, hunk staging, blame |
 | `flutter-tools.nvim` | Flutter/Dart development |
 | `roslyn.nvim` | C# via Roslyn LSP |
 | `lazydev.nvim` | Lua type hints & completion |
 | `claude-code.nvim` | Claude Code integration |
-| `dressing.nvim` | Improved input/select UI |
-| `alpha-nvim` | Dashboard (currently disabled) |
 | `plenary.nvim` + `nui.nvim` | Lua utilities & UI components |
 | `nvim-web-devicons` | File type icons |
 
@@ -139,7 +139,7 @@ Configured in `lua/plugins/lsp/conform.lua`. Format runs automatically on save (
 | Key | Action |
 |-----|--------|
 | `<C-h/j/k/l>` | Navigate between windows |
-| `<leader>mp` | Maximize current window |
+| `<leader>mp` | Zoom current window into its own tab (toggle) |
 
 ### File Navigation
 
@@ -173,6 +173,33 @@ Configured in `lua/plugins/lsp/conform.lua`. Format runs automatically on save (
 |-----|--------|
 | `s` | Flash jump (normal / visual / operator) |
 
+### Surround (mini.surround)
+
+| Key | Action |
+|-----|--------|
+| `gsa{motion}{char}` | Add surrounding |
+| `gsd{char}` | Delete surrounding |
+| `gsr{old}{new}` | Replace surrounding |
+| `gsf` / `gsF` | Find surrounding right / left |
+| `gsh` | Highlight surrounding |
+
+### Git (active in git-tracked buffers)
+
+| Key | Action |
+|-----|--------|
+| `]h` / `[h` | Next / previous hunk |
+| `<leader>gs` | Stage hunk |
+| `<leader>gr` | Reset hunk |
+| `<leader>gp` | Preview hunk |
+| `<leader>gb` | Blame line |
+
+### Built-in
+
+| Key / Command | Action |
+|-----|--------|
+| `<leader>u` | Toggle `:Undotree` |
+| `:DiffTool {left} {right}` | Diff two files or directories |
+
 ### LSP (active when LSP attaches)
 
 | Key | Action |
@@ -190,7 +217,7 @@ Configured in `lua/plugins/lsp/conform.lua`. Format runs automatically on save (
 
 | Key | Action |
 |-----|--------|
-| `<leader>ft` | Flutter commands (Telescope) |
+| `<leader>ft` | Flutter commands (fzf-lua) |
 | `<leader>fl` | Toggle Flutter dev log |
 
 ### Claude Code
@@ -206,6 +233,8 @@ Configured in `lua/plugins/lsp/conform.lua`. Format runs automatically on save (
 - **Indentation**: 2 spaces (expandtab)
 - **Line numbers**: Absolute + relative
 - **Undo**: Persistent across sessions, 1000 levels
+- **Search**: Case-insensitive unless the pattern has capitals; `:s` previews in a split
+- **Messages / cmdline**: Experimental `ui2`
 - **Splits**: Open below and to the right
 - **Borders**: Rounded window borders
 - **Swap files**: Disabled
@@ -231,7 +260,6 @@ Configured in `lua/plugins/lsp/conform.lua`. Format runs automatically on save (
             ├── conform.lua   # Formatting
             ├── luasnip.lua   # Snippets
             ├── lazydev.lua   # Lua dev support
-            ├── typescript-tools.lua
             ├── flutter-tools.lua
             └── roslyn.lua    # C#
 ```

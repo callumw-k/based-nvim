@@ -2,16 +2,13 @@
 require("plugins.web-devicons")
 require("plugins.plenary")
 require("plugins.nui")
-require("plugins.dressing")
 
 -- lsp
 require("plugins.lsp")
 
 -- ui
 require("plugins.lualine")
-require("plugins.alpha")
 require("plugins.catppuccin")
-require("plugins.windows")
 
 -- exploring
 require("plugins.oil")
@@ -23,8 +20,13 @@ require("plugins.autopairs")
 require("plugins.autotag")
 require("plugins.marks")
 require("plugins.flash")
+require("plugins.mini")
+
+-- git
+require("plugins.gitsigns")
 
 -- other
 require("plugins.treesitter")
 require("plugins.ai")
+require("plugins.builtin")
 require("plugins.scripts")

@@ -5,6 +5,7 @@ vim.pack.add({ "https://github.com/ibhagwan/fzf-lua" })
 require("fzf-lua").setup({
 	winopts = { preview = { layout = "vertical", vertical = "down:80%" } },
 })
+require("fzf-lua").register_ui_select()
 
 set_k("<leader>fp", ":FzfLua files<cr>")
 set_k("<leader>fg", ":FzfLua live_grep_native<cr>")

@@ -1,7 +1,4 @@
-vim.pack.add({
-	"https://github.com/nvim-flutter/flutter-tools.nvim",
-	"https://github.com/nvim-telescope/telescope.nvim",
-})
+vim.pack.add({ "https://github.com/nvim-flutter/flutter-tools.nvim" })
 
 require("flutter-tools").setup({
 	dev_log = {
@@ -19,11 +16,8 @@ require("flutter-tools").setup({
 	lsp = { settings = { lineLength = 120 } },
 })
 
-require("telescope").load_extension("flutter")
-local builtin = require("telescope").extensions
-
 require("keymaps").set_k("<leader>ft", function()
-	builtin.flutter.commands()
+	require("fzf-lua").commands({ query = "Flutter" })
 end)
 
 require("keymaps").set_k("<leader>fl", ":FlutterLogToggle<cr>")
