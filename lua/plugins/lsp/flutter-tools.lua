@@ -19,4 +19,4 @@ require("flutter-tools").setup({
 
 require("keymaps").set_k("<leader>j", function()
 	require("plugins.fzf-lua").command_picker("Flutter", { "LogToggle" })
-end)
+end, "Flutter commands")

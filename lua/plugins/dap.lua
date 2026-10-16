@@ -40,11 +40,11 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 
 local dap = require("dap")
 
-set_k("<F5>", dap.continue)
-set_k("<F9>", dap.toggle_breakpoint)
-set_k("<F10>", dap.step_over)
-set_k("<F11>", dap.step_into)
-set_k("<F12>", dap.step_out)
+set_k("<F5>", dap.continue, "Debug continue")
+set_k("<F9>", dap.toggle_breakpoint, "Toggle breakpoint")
+set_k("<F10>", dap.step_over, "Step over")
+set_k("<F11>", dap.step_into, "Step into")
+set_k("<F12>", dap.step_out, "Step out")
 set_k("<leader>k", function()
 	require("plugins.fzf-lua").command_picker("Dap", { "ViewToggle" })
-end)
+end, "Dap commands")

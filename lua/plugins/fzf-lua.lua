@@ -13,11 +13,11 @@ require("fzf-lua").setup({
 })
 require("fzf-lua").register_ui_select({ winopts = { height = 0.4, width = 0.4 } })
 
-set_k("<leader>fp", ":FzfLua files<cr>")
-set_k("<leader>fg", ":FzfLua live_grep_native<cr>")
-set_k("<leader>fh", ":FzfLua buffers<cr>")
-set_k("<leader>fm", ":FzfLua marks<cr>")
-set_k("<leader>fs", ":FzfLua grep_curbuf<cr>")
+set_k("<leader>fp", ":FzfLua files<cr>", "Find files")
+set_k("<leader>fg", ":FzfLua live_grep_native<cr>", "Live grep")
+set_k("<leader>fh", ":FzfLua buffers<cr>", "Buffers")
+set_k("<leader>fm", ":FzfLua marks<cr>", "Marks")
+set_k("<leader>fs", ":FzfLua grep_curbuf<cr>", "Search current buffer")
 
 return {
 	command_picker = function(prefix, pinned)

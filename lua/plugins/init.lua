@@ -12,6 +12,7 @@ require("plugins.lsp")
 -- ui
 require("plugins.lualine")
 require("plugins.catppuccin")
+require("plugins.which-key")
 
 -- exploring
 require("plugins.oil")

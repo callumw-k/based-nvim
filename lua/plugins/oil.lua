@@ -33,4 +33,4 @@ require("oil").setup({
 	},
 })
 
-set_k("<leader>pv", ":Oil<cr>")
+set_k("<leader>pv", ":Oil<cr>", "Open Oil")
