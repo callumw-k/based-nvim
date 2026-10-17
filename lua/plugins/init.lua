@@ -3,6 +3,9 @@ require("plugins.web-devicons")
 require("plugins.plenary")
 require("plugins.nui")
 
+-- debugging
+require("plugins.dap")
+
 -- lsp
 require("plugins.lsp")
 

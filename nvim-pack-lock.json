@@ -31,8 +31,8 @@
       "src": "https://github.com/folke/flash.nvim"
     },
     "flutter-tools.nvim": {
-      "rev": "0a02acb32955056a48c1ba4128ab491fb1b2ed4c",
-      "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
+      "rev": "16ce93e01df97167c4b590152c9e1a53cb569bc4",
+      "src": "https://github.com/callumw-k/flutter-tools.nvim"
     },
     "fzf-lua": {
       "rev": "64590411e6cf3d603d1e1bdad3a3d051f2f5a91a",
@@ -103,9 +103,25 @@
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
+    "nvim-dap": {
+      "rev": "cfa2d58f4537aca6ca83e2de1a0d9f1491121264",
+      "src": "https://github.com/mfussenegger/nvim-dap"
+    },
+    "nvim-dap-ui": {
+      "rev": "cc9dd33aade7f20bae414d0cba163bc60d4d4b43",
+      "src": "https://github.com/rcarriga/nvim-dap-ui"
+    },
+    "nvim-dap-view": {
+      "rev": "e766b3d8acef97e7e8b29f7f421aa4977b9978e1",
+      "src": "https://github.com/igorlfs/nvim-dap-view"
+    },
     "nvim-lspconfig": {
       "rev": "31026a13eefb20681124706a79fc1df6bf11ab27",
       "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-nio": {
+      "rev": "edcc181a875301dd21840189aa2f2f9ad69fc172",
+      "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
