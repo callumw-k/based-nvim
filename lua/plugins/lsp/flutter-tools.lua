@@ -18,8 +18,5 @@ require("flutter-tools").setup({
 })
 
 require("keymaps").set_k("<leader>ft", function()
-	local fzf = require("fzf-lua")
-	fzf.commands({ query = "Flutter", actions = { enter = fzf.actions.ex_run_cr } })
+	require("plugins.fzf-lua").command_picker("Flutter", { "LogToggle" })
 end)
-
-require("keymaps").set_k("<leader>fl", ":FlutterLogToggle<cr>")

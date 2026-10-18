@@ -20,6 +20,24 @@ require("dap-view").setup({
 	},
 })
 
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	pattern = "*__FLUTTER_DEV_LOG__",
+	callback = function(args)
+		vim.schedule(function()
+			local log_win = vim.fn.bufwinid(args.buf)
+			if log_win == -1 then
+				return
+			end
+			for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+				if vim.w[win].dapview_win then
+					vim.api.nvim_win_set_config(log_win, { split = "left", win = win })
+					return
+				end
+			end
+		end)
+	end,
+})
+
 local dap = require("dap")
 
 set_k("<F5>", dap.continue)
@@ -27,8 +45,6 @@ set_k("<F9>", dap.toggle_breakpoint)
 set_k("<F10>", dap.step_over)
 set_k("<F11>", dap.step_into)
 set_k("<F12>", dap.step_out)
-set_k("<leader>V", ":DapViewToggle<cr>")
 set_k("<leader>fd", function()
-	local fzf = require("fzf-lua")
-	fzf.commands({ query = "Dap", actions = { enter = fzf.actions.ex_run_cr } })
+	require("plugins.fzf-lua").command_picker("Dap", { "ViewToggle" })
 end)

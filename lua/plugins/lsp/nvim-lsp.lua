@@ -36,6 +36,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		-- require("keymaps").set_k("gdd", ":FzfLua lsp_declartions<cr>")
 		set_k("gd", ":FzfLua lsp_definitions<cr>")
+		set_k("gs", function()
+			local fzf = require("fzf-lua")
+			fzf.lsp_definitions({ jump1_action = fzf.actions.file_vsplit })
+		end)
 		set_k("gt", ":FzfLua lsp_typedefs<cr>")
 		set_k("gi", ":FzfLua lsp_implementations<cr>")
 		set_k("grr", ":FzfLua lsp_references<cr>")
