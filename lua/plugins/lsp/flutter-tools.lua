@@ -17,6 +17,6 @@ require("flutter-tools").setup({
 	lsp = { settings = { lineLength = 120 } },
 })
 
-require("keymaps").set_k("<leader>ft", function()
+require("keymaps").set_k("<leader>j", function()
 	require("plugins.fzf-lua").command_picker("Flutter", { "LogToggle" })
 end)

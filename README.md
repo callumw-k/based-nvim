@@ -217,8 +217,7 @@ Configured in `lua/plugins/lsp/conform.lua`. Format runs automatically on save (
 
 | Key | Action |
 |-----|--------|
-| `<leader>ft` | Flutter commands (fzf-lua) |
-| `<leader>fl` | Toggle Flutter dev log |
+| `<leader>j` | Flutter commands (fzf-lua) |
 
 ### Claude Code
 
