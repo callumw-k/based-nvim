@@ -60,6 +60,7 @@ vim.pack.add({ { src = "https://github.com/author/plugin", version = "v1.0.0" } 
 | `neo-tree.nvim` | Tree-style file explorer (`:Neotree`), closes when a file is opened |
 | `flash.nvim` | Enhanced motion/jumping |
 | `which-key.nvim` | Popup listing the keymaps that follow a prefix |
+| `render-markdown.nvim` | Renders Markdown in the buffer, showing raw text on the cursor line |
 | `catppuccin` | Colour scheme (Macchiato) |
 | `lualine.nvim` | Status bar, showing the file path relative to the cwd |
 | `mini.tabline` | Buffer line, marking modified buffers with `●` |
@@ -134,6 +135,7 @@ Leader key: `<Space>`. Press it and wait to see the which-key popup.
 | `<leader>o` | Source current file |
 | `<leader>y` | Yank to system clipboard (normal / visual) |
 | `p` (visual) | Paste without overwriting the register |
+| `<leader>v` | Toggle Markdown rendering |
 
 ### Buffers
 

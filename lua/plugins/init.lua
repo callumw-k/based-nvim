@@ -13,6 +13,7 @@ require("plugins.lsp")
 require("plugins.lualine")
 require("plugins.catppuccin")
 require("plugins.which-key")
+require("plugins.render-markdown")
 
 -- exploring
 require("plugins.oil")
