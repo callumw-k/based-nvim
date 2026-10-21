@@ -149,9 +149,8 @@ Configured in `lua/plugins/lsp/conform.lua`. Format runs automatically on save (
 | `<leader>fp` | Find files (fzf) |
 | `<leader>fg` | Live grep (fzf) |
 | `<leader>fs` | Grep current buffer (fzf) |
-| `<leader>fh` | Search help tags (fzf) |
+| `<leader>fh` | Find open buffers (fzf) |
 | `<leader>fm` | Find marks (fzf) |
-| `<leader>h` | Find open buffers (fzf) |
 
 #### Oil (file explorer) keymaps
 
