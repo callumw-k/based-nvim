@@ -1,7 +1,6 @@
 -- dependencies
 require("plugins.web-devicons")
 require("plugins.plenary")
-require("plugins.nui")
 
 -- debugging
 require("plugins.dap")
@@ -18,7 +17,6 @@ require("plugins.render-markdown")
 -- exploring
 require("plugins.oil")
 require("plugins.fzf-lua")
-require("plugins.neo-tree")
 require("plugins.snacks")
 
 -- editing

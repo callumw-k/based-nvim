@@ -57,7 +57,6 @@ vim.pack.add({ { src = "https://github.com/author/plugin", version = "v1.0.0" } 
 | `nvim-treesitter` | Syntax highlighting (`main` branch) |
 | `fzf-lua` | Fuzzy finder, also used for `vim.ui.select` |
 | `oil.nvim` | File explorer (default) |
-| `neo-tree.nvim` | Tree-style file explorer (`:Neotree`), closes when a file is opened |
 | `snacks.nvim` | Tree explorer sidebar that opens in a fuzzy filter |
 | `flash.nvim` | Enhanced motion/jumping |
 | `which-key.nvim` | Popup listing the keymaps that follow a prefix |
@@ -77,7 +76,7 @@ vim.pack.add({ { src = "https://github.com/author/plugin", version = "v1.0.0" } 
 | `roslyn.nvim` | C# via Roslyn LSP |
 | `lazydev.nvim` | Lua type hints and completion |
 | `claude-code.nvim` | Claude Code integration |
-| `plenary.nvim` + `nui.nvim` | Lua utilities and UI components |
+| `plenary.nvim` | Lua utilities |
 | `nvim-web-devicons` | File type icons |
 
 ## LSP Servers
