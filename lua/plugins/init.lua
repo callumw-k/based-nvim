@@ -19,6 +19,7 @@ require("plugins.render-markdown")
 require("plugins.oil")
 require("plugins.fzf-lua")
 require("plugins.neo-tree")
+require("plugins.snacks")
 
 -- editing
 require("plugins.autopairs")

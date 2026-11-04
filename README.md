@@ -58,6 +58,7 @@ vim.pack.add({ { src = "https://github.com/author/plugin", version = "v1.0.0" } 
 | `fzf-lua` | Fuzzy finder, also used for `vim.ui.select` |
 | `oil.nvim` | File explorer (default) |
 | `neo-tree.nvim` | Tree-style file explorer (`:Neotree`), closes when a file is opened |
+| `snacks.nvim` | Tree explorer sidebar that opens in a fuzzy filter |
 | `flash.nvim` | Enhanced motion/jumping |
 | `which-key.nvim` | Popup listing the keymaps that follow a prefix |
 | `render-markdown.nvim` | Renders Markdown in the buffer, showing raw text on the cursor line |
@@ -164,6 +165,7 @@ Windows are equalised horizontally whenever you move into one.
 | Key | Action |
 |-----|--------|
 | `<leader>pv` | Open Oil file explorer |
+| `<leader>pe` | Open snacks explorer, focused on the fuzzy filter |
 | `<leader>fp` | Find files (fzf) |
 | `<leader>fg` | Live grep (fzf), skipping `docs/superpowers/` |
 | `<leader>fs` | Grep current buffer (fzf) |
@@ -189,6 +191,24 @@ Windows are equalised horizontally whenever you move into one.
 | `g.` | Toggle hidden files |
 | `g\` | Toggle trash |
 | `g?` | Show help |
+
+#### Snacks explorer keymaps
+
+The explorer opens in the filter prompt, and file operations work from the prompt as well as the list. `<Esc>` drops to normal mode in the prompt, and `/` switches to the list.
+
+| Key (prompt) | Key (list) | Action |
+|-----|-----|--------|
+| `<A-a>` | `a` | New file, or a folder when the name ends in `/` |
+| `<A-d>` | `d` | Delete (to the system trash) |
+| `<A-r>` | `r` | Rename |
+| `<A-c>` | `c` | Copy the selection into the current directory |
+| `<A-v>` | `m` | Move the selection into the current directory |
+| `<Tab>` | `<Tab>` | Select / deselect |
+| `<CR>` | `<CR>` / `l` | Open file or toggle directory |
+|  | `h` | Close directory |
+|  | `<BS>` | Go up a directory |
+|  | `H` / `I` | Toggle hidden / ignored files |
+|  | `?` | Show help |
 
 ### Motion
 
